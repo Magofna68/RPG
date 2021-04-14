@@ -23,3 +23,11 @@ export class Weapon {
   }
 }
 
+export class Armor {
+  constructor(type, weight, bodyPart, defense) {
+    this.type = type
+    this.weight = weight
+    this.bodyPart = bodyPart
+    this.defense = defense
+  }
+}

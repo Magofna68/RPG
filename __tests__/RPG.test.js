@@ -1,4 +1,4 @@
-import { Person, Weapon } from '../src/classes.js'
+import { Person, Weapon, Armor } from '../src/classes.js'
 
 describe('PersonClass', () => {
   let myPerson;
@@ -78,4 +78,30 @@ describe('WeaponClass', () => {
   })
 })
 
+describe('armorClass', () => {
+  let myArmor;
+  beforeEach(() => {
+    myArmor = new Armor("helmet", 20, "head", 10)
+  })
+
+  test("Armor should exist", () => {
+    expect(myArmor).toBeDefined()
+  })
+
+  test("Armor has a type", () => {
+    expect(myArmor.type).toBeDefined()
+  })
+
+  test("Armor has a weight", () => {
+    expect(myArmor.weight).toBeDefined()
+  })
+
+  test("Armor has a bodyPart", () => {
+    expect(myArmor.bodyPart).toBeDefined()
+  })
+
+  test("Armor has a defense", () => {
+    expect(myArmor.type).toBeDefined()
+  })
+})
 
