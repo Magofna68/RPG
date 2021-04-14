@@ -1,4 +1,4 @@
-import { Person } from '../src/classes.js'
+import { Person, Weapon } from '../src/classes.js'
 
 describe('PersonClass', () => {
   let myPerson;
@@ -42,7 +42,40 @@ describe('PersonClass', () => {
     expect(myPerson.inventory.armor).toBeDefined()
   })
 
+  test('Inventory object contains weapons', () => {
+    expect(myPerson.inventory.weapons).toBeDefined()
+  })
+
+  test('Inventory object contains potions', () => {
+    expect(myPerson.inventory.potions).toBeDefined()
+  })
 })
 
+describe('WeaponClass', () => {
+  let myWeapon;
+  beforeEach(() => {
+    myWeapon = new Weapon("sword", 20, 5, 20)
+  })
+
+  test('a Weapon constructor class should exist', () => {
+    expect(myWeapon).toBeDefined();
+  })
+
+  test('WeaponClass has property weaponType', () => {
+    expect(myWeapon.type).toBeDefined()
+  })
+
+  test('WeaponClass has property attack', () => {
+    expect(myWeapon.attack).toBeDefined()
+  })
+
+  test('WeaponClass has property range', () => {
+    expect(myWeapon.range).toBeDefined()
+  })
+
+  test('WeaponClass has property weight', () => {
+    expect(myWeapon.weight).toBeDefined()
+  })
+})
 
 
