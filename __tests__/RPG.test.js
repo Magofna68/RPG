@@ -6,6 +6,11 @@ describe('PersonClass', () => {
     const examplePerson = new Person()
     expect(examplePerson).toBeDefined();
   })
+
+  test('Person class should have health property', () => {
+    const myHealth = new Person() 
+    expect(myHealth.health).toBeDefined()
+  })
 })
 
 
