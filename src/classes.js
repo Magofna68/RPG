@@ -56,3 +56,9 @@ export class Mage extends Person {
     ];
   }
 }
+
+export class Troll extends Person {
+  constructor(health, attack, speed, defense, stamina) {
+    super(health, attack, speed, defense, stamina)
+  }
+}

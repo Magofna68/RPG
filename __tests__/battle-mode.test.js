@@ -1,5 +1,5 @@
 import { BattleMode } from '../src/battle-mode.js'
-import { Attack, Person, Weapon, Armor, MagicUser, Mage } from '../src/classes.js'
+import { Mage, Troll } from '../src/classes.js'
 
 describe("Battle Mode", () => {
   let myBattleMode;
@@ -7,8 +7,9 @@ describe("Battle Mode", () => {
   let myTroll;
 
     beforeEach(() => {
-      myBattleMode = new BattleMode([],[])
       myMage = new Mage()
+      myTroll = new Troll()
+      myBattleMode = new BattleMode([myMage],[myTroll])
     })
   test("BattleMode class exists", () => {
     expect(myBattleMode).toBeDefined()
@@ -20,6 +21,25 @@ describe("Battle Mode", () => {
 
   test("BattleMode has villains property", () => {
     expect(myBattleMode.villains).toBeDefined()
+  })
+
+  test('BattleMode has turn property', () => {
+    expect(myBattleMode.turn).toBeDefined()
+  })
+
+  test("BattleMode has a changeTurn method", () => {
+    expect(myBattleMode.changeTurn).toBeDefined()
+  })
+
+  test('BattleMode changes the turn', () => {
+    myBattleMode.changeTurn()
+    expect(myBattleMode.turn).toEqual("villains")
+  })
+
+  test('BattleMode changes the turn', () => {
+    myBattleMode.changeTurn()
+    myBattleMode.changeTurn()
+    expect(myBattleMode.turn).toEqual("heroes")
+  })
 })
 
-})
