@@ -1,5 +1,5 @@
 import { BattleMode } from '../src/battle-mode.js'
-import { Mage, Troll } from '../src/classes.js'
+import { Mage, Troll } from '../src/characters.js'
 
 describe("Battle Mode", () => {
   let myBattleMode;
@@ -42,12 +42,17 @@ describe("Battle Mode", () => {
     expect(myBattleMode.turn).toEqual("heroes")
   })
 
-  test("HasDied method should return true if player health is below zero", () => {
-    expect(myBattleMode.hasDied(myTroll)).toBeFalsy()
+  test("hasAnyoneDied method should return true if any player health is below zero", () => {
+    const myDeadTroll = new Troll()
+    myDeadTroll.health = 0
+    const myDeadBattleMode = new BattleMode([myDeadTroll],[])
+    expect(myDeadBattleMode.hasAnyoneDied(myDeadBattleMode)).toBeTruthy()
   })
 
-  xtest("BattleMode should check if a player has died at the end of each turn", () => {
-    
+  test("BattleMode dealDamage should reduce the health of a character", () => {
+    const initialHealth = myTroll.health
+    myBattleMode.dealDamage(myTroll, myMage.attack)
+    expect(myTroll.health).toBeLessThan(initialHealth)
   })
 })
 

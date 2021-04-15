@@ -1,4 +1,5 @@
-import { Attack, Person, Weapon, Armor, Mage } from '../src/classes.js'
+import { Attack, Person, Weapon, Armor } from '../src/classes.js'
+import { Mage } from '../src/characters.js'
 
 describe('PersonClass', () => {
   let myPerson;
@@ -19,7 +20,7 @@ describe('PersonClass', () => {
   })
 
   test('Person class should have attack default value of 100', () => {
-    expect(myPerson.attack).toEqual(100)
+    expect(myPerson.attack).toEqual(10)
   })
 
   test('Person class should have speed default value of 100', () => {

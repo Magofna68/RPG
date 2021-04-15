@@ -13,23 +13,18 @@ export class BattleMode {
     }
   }
 
-  checkForDeath() {
+  hasAnyoneDied() {
     let anyoneDead = false
-    this.heroes.forEach(function(person) {
-      anyoneDead = hasDied(person)
+    this.heroes.forEach(person => {
+      anyoneDead = person.health <= 0
     })
-    this.villains.forEach(function(person) {
-      anyoneDead = hasDied(person)
+    this.villains.forEach(person => {
+      anyoneDead = person.health <= 0
     })
+    return anyoneDead
   }
 
-  hasDied(person) {
-    if (person.health <= 0) {
-      return true
-    } else {
-      console.log(typeof person.health)
-      return false
-    }
+  dealDamage(character, damage) {
+    character.health = character.health - damage
   }
-
 }
