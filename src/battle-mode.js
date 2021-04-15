@@ -12,4 +12,23 @@ export class BattleMode {
       this.turn = "heroes"
     }
   }
+
+  checkForDeath() {
+    let anyoneDead = false
+    this.heroes.forEach(function(person) {
+      anyoneDead = hasDied(person)
+    })
+    this.villains.forEach(function(person) {
+      anyoneDead = hasDied(person)
+    })
+  }
+
+  hasDied(person) {
+    if (person.health <= 0) {
+      return true
+    } else {
+      return false
+    }
+  }
+
 }
