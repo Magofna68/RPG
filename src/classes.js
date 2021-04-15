@@ -1,10 +1,10 @@
 export class Person {
-  constructor() {
-    this.health = 100;
-    this.attack = 100;
-    this.speed = 100;
-    this.defense = 100;
-    this.stamina = 100;
+  constructor(health, attack, speed, defense, stamina) {
+    this.health = health || 100;
+    this.attack = attack || 100;
+    this.speed = speed || 100;
+    this.defense = defense || 100;
+    this.stamina = stamina || 100;
     // Range?
     this.inventory = {
       armor: [],
@@ -23,15 +23,15 @@ export class Attack {
 }
 
 export class Weapon extends Attack {
-  constructor(weight) {
-    super()
+  constructor(type, attack, range, weight) {
+    super(type, attack, range)
     this.weight = weight;
   }
 }
 
 export class Spell extends Attack {
-  constructor(mana) {
-    super();
+  constructor(type, attack, range, mana) {
+    super(type, attack, range);
     this.mana = mana;
   }
 }
@@ -45,13 +45,14 @@ export class Armor {
   }
 }
 
-export class MagicUser extends Person {
-  constructor() {
-    super()
+export class Mage extends Person {
+  constructor(health, attack, speed, defense, stamina) {
+    super(health, attack, speed, defense, stamina)
     this.mana = 100;
     this.spells = [
-      // new Spell("Magic Missile", 50, 20, 0),
-      // new Spell("Stamina Regen", 0, 20, 50)
+      new Spell("Fireball",25,20,30),
+      new Spell("Magic Missile", 50, 20, 0),
+      new Spell("Stamina Regen", 0, 20, 50)
     ];
   }
 }

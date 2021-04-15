@@ -1,4 +1,4 @@
-import { Person, Weapon, Armor, MagicUser } from '../src/classes.js'
+import { Attack, Person, Weapon, Armor, Mage } from '../src/classes.js'
 
 describe('PersonClass', () => {
   let myPerson;
@@ -72,16 +72,12 @@ describe('AttackClass', () => {
   test('Attack Class has property range', () => {
     expect(myAttack.range).toBeDefined()
   })
-
-  test('Attack Class has property weight', () => {
-    expect(myAttack.weight).toBeDefined()
-  })
 })
 
 describe('WeaponClass', () => {
   let myWeapon;
   beforeEach(() => {
-    myWeapon = new Weapon("sword", 20, 5, 20)
+    myWeapon = new Weapon("sword",20,5,15)
   })
 
   test('a Weapon constructor class should exist', () => {
@@ -132,27 +128,27 @@ describe('armorClass', () => {
   })
 })
 
-describe("MagicUser", () => {
-  let myMagicUser
+describe("Mage", () => {
+  let myMage
 
   beforeEach(() => {
-    myMagicUser = new MagicUser()
+    myMage = new Mage()
   })
 
-  test("Magic User should exist", () => {
-    expect(myMagicUser).toBeDefined()
+  test("Mage should exist", () => {
+    expect(myMage).toBeDefined()
   })
 
-  test("Magic User should exist should extend Person", () => {
-    expect(myMagicUser.health).toBeDefined()
+  test("Mage should exist should extend Person", () => {
+    expect(myMage.health).toBeDefined()
   })
 
-  test('Magic User should have mana points property', () => {
-    expect(myMagicUser.mana).toEqual(100)
+  test('Mage should have mana points property', () => {
+    expect(myMage.mana).toEqual(100)
   })
 
-  test('Magic User should have array of spells', () => {
-    expect(myMagicUser.spells).toBeDefined();
+  test('Mage should have array of spells', () => {
+    expect(myMage.spells).toBeDefined();
   })
 })
 

@@ -1,4 +1,5 @@
 import { BattleMode } from '../src/battle-mode.js'
+import { Attack, Person, Weapon, Armor, MagicUser, Mage } from '../src/classes.js'
 
 describe("Battle Mode", () => {
   let myBattleMode;
@@ -7,7 +8,7 @@ describe("Battle Mode", () => {
 
     beforeEach(() => {
       myBattleMode = new BattleMode([],[])
-      
+      myMage = new Mage()
     })
   test("BattleMode class exists", () => {
     expect(myBattleMode).toBeDefined()
