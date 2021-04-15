@@ -16,9 +16,14 @@ export class BattleMode {
   hasAnyoneDied() {
     let anyoneDead = false
     this.heroes.forEach(person => {
+      console.log("HERO DEAD?",person)
       anyoneDead = person.health <= 0
     })
+    if (anyoneDead) {
+      return true
+    }
     this.villains.forEach(person => {
+      console.log("VILLAIN DEAD?",person)
       anyoneDead = person.health <= 0
     })
     return anyoneDead
