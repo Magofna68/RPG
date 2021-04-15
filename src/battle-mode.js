@@ -27,6 +27,7 @@ export class BattleMode {
     if (person.health <= 0) {
       return true
     } else {
+      console.log(typeof person.health)
       return false
     }
   }

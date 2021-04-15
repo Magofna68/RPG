@@ -41,5 +41,13 @@ describe("Battle Mode", () => {
     myBattleMode.changeTurn()
     expect(myBattleMode.turn).toEqual("heroes")
   })
+
+  test("HasDied method should return true if player health is below zero", () => {
+    expect(myBattleMode.hasDied(myTroll)).toBeFalsy()
+  })
+
+  xtest("BattleMode should check if a player has died at the end of each turn", () => {
+    
+  })
 })
 
