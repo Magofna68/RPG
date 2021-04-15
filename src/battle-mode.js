@@ -1,5 +1,6 @@
 export class BattleMode {
-  constructor() {
-    
+  constructor(heroes, villains) {
+    this.heroes = heroes;
+    this.villains = villains;
   }
 }
